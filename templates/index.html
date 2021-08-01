@@ -1,0 +1,50 @@
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Bank Campaign Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="age" required="required" />
+    	<input type="text" name="job" placeholder="job" required="required" />
+    	<input type="text" name="marital" placeholder="marital" required="required" />
+    	<input type="text" name="education" placeholder="education" required="required" />
+    	<input type="text" name="targeted" placeholder="targeted" required="required" />
+    	<input type="text" name="default" placeholder="default" required="required" />
+    	<input type="text" name="housing" placeholder="housing" required="required" />
+    	<input type="text" name="contact" placeholder="contact" required="required" />
+    	<input type="text" name="month" placeholder="month" required="required" />
+    	<input type="text" name="poutcome" placeholder="poutcome" required="required" />
+    	<input type="text" name="balance" placeholder="balance" required="required" />
+    	<input type="text" name="day" placeholder="day" required="required" />
+    	<input type="text" name="duration" placeholder="duration" required="required" />
+    	<input type="text" name="campaign" placeholder="campaign" required="required" />
+    	<input type="text" name="pdays" placeholder="pdays" required="required" />
+    	<input type="text" name="previous" placeholder="previous" required="required" />
+        <input type="text" name="salary" placeholder="salary" required="required" />
+		<input type="text" name="loan" placeholder="loan" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
